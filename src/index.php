@@ -1,9 +1,4 @@
 <?php
-  // ini_set('display_errors', 1);
-  // ini_set('display_startup_errors', 1);
-  // error_reporting(E_ALL);
-
-  // include 'File/X509.php';
   include 'Crypt/RSA.php';
 
   $rsa = new Crypt_RSA();
@@ -21,5 +16,7 @@
   $rsa->loadKey($public_key);
   $ciphertext = $rsa->encrypt($plaintext);
 
+  echo "Plain value: $plaintext\n";
+  echo "Encrypted value:\n";
   echo base64_encode($ciphertext);
 ?>
